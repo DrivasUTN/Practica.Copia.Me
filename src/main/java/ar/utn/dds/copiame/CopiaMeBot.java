@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-public class CopiameBot extends TelegramLongPollingBot {
+public class CopiaMeBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
@@ -36,7 +36,7 @@ public class CopiameBot extends TelegramLongPollingBot {
         final TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
         try {
             // Se registra el bot
-            telegramBotsApi.registerBot(new CopiameBot());
+            telegramBotsApi.registerBot(new CopiaMeBot());
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

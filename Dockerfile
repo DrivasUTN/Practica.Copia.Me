@@ -8,4 +8,4 @@ WORKDIR /app
 COPY target/*.jar /app/
 
 # Especifica el comando para ejecutar la aplicación
-CMD ["java", "-cp", ".:/app/*", "ar.utn.dds.copiame.CopiaMeApp"]
+CMD ["java", "-cp", ".:/app/*", "ar.utn.dds.copiame.CopiaMeBot"]

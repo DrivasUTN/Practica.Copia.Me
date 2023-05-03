@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ar.utn.dds.copiame.DocumentoTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in ar.utn.dds.copiame.DocumentoTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in ar.utn.dds.copiame.DocumentoTest

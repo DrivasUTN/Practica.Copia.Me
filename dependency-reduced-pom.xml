@@ -12,7 +12,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>ar.utn.dds.copiame.CopiaMeApp</mainClass>
+              <mainClass>ar.utn.dds.copiame.CopiaMeBot</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -40,7 +40,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>ar.utn.dds.copiame.CopiaMeApp</mainClass>
+                  <mainClass>ar.utn.dds.copiame.CopiaMeBot</mainClass>
                 </transformer>
               </transformers>
             </configuration>

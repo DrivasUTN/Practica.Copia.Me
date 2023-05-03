@@ -5,6 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR .
 
 # Copia el archivo jar de la aplicación en el directorio de trabajo
+RUN mvn package
 COPY target/copiame-cli-0.0.1-SNAPSHOT.jar copiame-cli.jar
 
 # Especifica el comando para ejecutar la aplicación

@@ -8,7 +8,11 @@ import java.nio.file.Paths;
 public class CopiaMeApp {
 
 	public static void main(String[] args) {
-		
+
+		if (0 == args.length) {
+			System.err.println("No se ingresaron argumentos");
+			System.exit(1);
+		}
 		// Valido argumentos del usuario --> Capa Presentación
 		Path pathLote = Paths.get(args[0]);
 		if ( ! Files.exists( pathLote )) {

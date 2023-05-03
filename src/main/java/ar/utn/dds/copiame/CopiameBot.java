@@ -10,7 +10,18 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-public class CopiaMeBot extends TelegramLongPollingBot {
+public class CopiameBot extends TelegramLongPollingBot {
+    public static void main(String[] args) throws TelegramApiException {
+        // Se crea un nuevo Bot API
+        final TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+        try {
+            // Se registra el bot
+            telegramBotsApi.registerBot(new CopiameBot());
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
@@ -31,16 +42,7 @@ public class CopiaMeBot extends TelegramLongPollingBot {
         // Se devuelve el token que nos generó el BotFather de nuestro bot
         return System.getenv("BOT_COPIAME_TOKEN");
     }
-    public static void main(String[] args) throws TelegramApiException {
-        // Se crea un nuevo Bot API
-        final TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-        try {
-            // Se registra el bot
-            telegramBotsApi.registerBot(new CopiaMeBot());
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
+
     private void textoComoMsg(Message message){
         final String messageTextReceived = message.getText();
         // Se obtiene el id de chat del usuario

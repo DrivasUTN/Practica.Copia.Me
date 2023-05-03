@@ -1,5 +1,11 @@
-# Usa una imagen de Java 17 como base
-FROM arm64v8/openjdk:17
+# Selecciona la imagen base según la arquitectura
+# Arm64v8
+FROM arm64v8/openjdk:17 AS arm64v8
+# x86_64
+FROM openjdk:17 AS x86_64
+
+# Elige la imagen base según la arquitectura del sistema
+FROM ${TARGETPLATFORM} AS base
 
 # Crea un directorio de trabajo para la aplicación
 WORKDIR .

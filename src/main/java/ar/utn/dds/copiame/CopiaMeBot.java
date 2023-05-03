@@ -17,6 +17,7 @@ import java.util.Date;
 public class CopiaMeBot extends TelegramLongPollingBot {
     public static void main(String[] args) throws TelegramApiException {
         // Establecer el puerto en el que se iniciará la aplicación
+        System.setProperty("server.address", "0.0.0.0");
         System.getProperties().put("server.port", "10000");
 
         // Se crea un nuevo Bot API

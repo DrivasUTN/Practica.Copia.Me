@@ -29,7 +29,7 @@ public class CopiaMeBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-        System.out.println("Se inicio la ejecución del BOT correctamente");
+        System.out.println("Se inicio la ejecución del BOT correctamente.");
     }
 
     @Override

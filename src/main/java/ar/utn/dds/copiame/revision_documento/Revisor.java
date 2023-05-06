@@ -1,4 +1,4 @@
-package ar.utn.dds.copiame;
+package ar.utn.dds.copiame.revision_documento;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +7,6 @@ public class Revisor {
 
 	private String nombre;
 	private List<RevisionDocumento> revisar;
-	
-	
-	
 
 	public Revisor() {
 		super();

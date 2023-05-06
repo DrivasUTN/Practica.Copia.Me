@@ -1,4 +1,6 @@
-package ar.utn.dds.copiame;
+package ar.utn.dds.copiame.evaluador_copia;
+
+import ar.utn.dds.copiame.ParDocumentos;
 
 import java.util.List;
 

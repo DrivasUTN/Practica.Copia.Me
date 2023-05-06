@@ -1,5 +1,7 @@
 package ar.utn.dds.copiame;
 
+import ar.utn.dds.copiame.revision_documento.RevisionDocumento;
+
 import java.util.ArrayList;
 import java.util.List;
 

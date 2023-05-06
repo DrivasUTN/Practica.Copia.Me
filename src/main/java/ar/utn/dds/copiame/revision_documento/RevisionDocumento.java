@@ -1,4 +1,6 @@
-package ar.utn.dds.copiame;
+package ar.utn.dds.copiame.revision_documento;
+
+import ar.utn.dds.copiame.ParDocumentos;
 
 import java.time.LocalDateTime;
 

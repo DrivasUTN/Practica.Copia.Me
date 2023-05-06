@@ -1,4 +1,9 @@
-package ar.utn.dds.copiame;
+package ar.utn.dds.copiame.evaluador_copia;
+
+import ar.utn.dds.copiame.ParDocumentos;
+import ar.utn.dds.copiame.revision_documento.RevisionDocumento;
+import ar.utn.dds.copiame.revision_documento.RevisionDocumentoManual;
+import ar.utn.dds.copiame.revision_documento.Revisor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +33,7 @@ public class EvaluadorDeCopiaManual implements EvaluadorDeCopia {
 
 		for (ParDocumentos parDocumentos : subList) {
 			Revisor elegirRevisor = this.elegirRevisor();
-			RevisionDocumento rd = new RevisionDocumentoManual(parDocumentos, elegirRevisor());			
+			RevisionDocumento rd = new RevisionDocumentoManual(parDocumentos, elegirRevisor());
 			parDocumentos.addRevision(rd);
 			elegirRevisor.addRevision(rd);
 		}

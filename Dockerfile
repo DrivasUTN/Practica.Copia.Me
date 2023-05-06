@@ -11,5 +11,5 @@ COPY target/copiame-cli-0.0.1-SNAPSHOT.jar copiame-cli.jar
 # Especifica el comando para ejecutar la aplicación
 #CMD ["java", "-cp", "copiame-cli.jar", "ar.utn.dds.copiame.CopiaMeApp"]
 #CMD ["ar.utn.dds.copiame.CopiaMeBot"]
-ENTRYPOINT ["java", "-jar", "copiame-cli.jar","--server.port=10000", "--server.address=0.0.0.0"]
+ENTRYPOINT ["java", "-jar", "copiame-cli.jar"]
 

@@ -1,5 +1,7 @@
 package ar.utn.dds.copiame;
 
+import ar.utn.dds.copiame.evaluador_copia.EvaluadorDeCopiaAutomatico;
+import ar.utn.dds.copiame.utils.UnzipUtility;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.GetFile;

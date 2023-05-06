@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import ar.utn.dds.copiame.evaluador_copia.EvaluadorDeCopia;
 import org.paukov.combinatorics3.Generator;
 
 public class AnalsisDeCopia {
@@ -24,8 +25,7 @@ public class AnalsisDeCopia {
 		this.evaluadores = new ArrayList<EvaluadorDeCopia>();
 		
 	}
-	
-	
+
 	
 	public String getId() {
 		return id;

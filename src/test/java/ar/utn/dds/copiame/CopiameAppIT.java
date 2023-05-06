@@ -5,6 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
+import ar.utn.dds.copiame.evaluador_copia.EvaluadorDeCopiaAutomatico;
+import ar.utn.dds.copiame.evaluador_copia.EvaluadorDeCopiaManual;
+import ar.utn.dds.copiame.revision_documento.RevisionDocumento;
+import ar.utn.dds.copiame.revision_documento.Revisor;
 import org.junit.jupiter.api.Test;
 
 public class CopiameAppIT {

@@ -1,15 +1,16 @@
-#FROM arm64v8/openjdk:17
-FROM openjdk:17-jdk-alpine
+# syntax = docker/dockerfile:1.2
+#
+# Build stage
+#
+FROM maven:3.8.6-openjdk-18 AS build
+COPY . .
+RUN mvn clean package assembly:single -DskipTests
 
-# Crea un directorio de trabajo para la aplicación
-WORKDIR .
-
-# Copia el archivo jar de la aplicación en el directorio de trabajo
-#RUN mvn clean package
-COPY target/copiame-cli-0.0.1-SNAPSHOT.jar copiame-cli.jar
-#CMD ["mvn","clean","package"]
-# Especifica el comando para ejecutar la aplicación
-#CMD ["java", "-cp", "copiame-cli.jar", "ar.utn.dds.copiame.CopiaMeApp"]
-#CMD ["ar.utn.dds.copiame.CopiaMeBot"]
-ENTRYPOINT ["java", "-jar", "copiame-cli.jar"]
-
+#
+# Package stage
+#
+FROM openjdk:17-jdk-slim
+COPY --from=build /target/copiame-cli-0.0.1-SNAPSHOT-jar-with-dependencies.jar copiame.jar
+# ENV PORT=8080
+EXPOSE 8080
+ENTRYPOINT ["java","-classpath","copiame.jar","ar.utn.dds.copiame.CopiameAPI"]

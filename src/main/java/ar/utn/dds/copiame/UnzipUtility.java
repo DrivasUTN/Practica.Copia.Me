@@ -6,34 +6,39 @@ import java.util.zip.ZipInputStream;
 
 public class UnzipUtility {
 
-    private static final int BUFFER_SIZE = 4096;
+	private static final int BUFFER_SIZE = 4096;
 
-    public static void unzip(File zipFile, String destDirectory) throws IOException {
-        File destDir = new File(destDirectory);
-        if (!destDir.exists()) {
-            destDir.mkdir();
-        }
+	public static void unzip(File zipFile, String destDirectory) throws IOException {
 
-        try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFile))) {
-            ZipEntry entry = zipIn.getNextEntry();
-            while (entry != null) {
-                String filePath = destDirectory + File.separator + entry.getName();
-                if (!entry.isDirectory()) {
-                    extractFile(zipIn, filePath);
-                }
-                zipIn.closeEntry();
-                entry = zipIn.getNextEntry();
-            }
-        }
-    }
+		FileInputStream inStream = new FileInputStream(zipFile);
+		unzip(inStream, destDirectory);
+	}
 
-    private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
-        try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath))) {
-            byte[] bytesIn = new byte[BUFFER_SIZE];
-            int read = 0;
-            while ((read = zipIn.read(bytesIn)) != -1) {
-                bos.write(bytesIn, 0, read);
-            }
-        }
-    }
+	public static void unzip(InputStream inStream, String destDirectory) throws IOException {
+		File destDir = new File(destDirectory);
+		if (!destDir.exists()) {
+			destDir.mkdir();
+		}
+		try (ZipInputStream zipIn = new ZipInputStream(inStream)) {
+			ZipEntry entry = zipIn.getNextEntry();
+			while (entry != null) {
+				String filePath = destDirectory + File.separator + entry.getName();
+				if (!entry.isDirectory()) {
+					extractFile(zipIn, filePath);
+				}
+				zipIn.closeEntry();
+				entry = zipIn.getNextEntry();
+			}
+		}
+	}
+
+	private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
+		try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath))) {
+			byte[] bytesIn = new byte[BUFFER_SIZE];
+			int read = 0;
+			while ((read = zipIn.read(bytesIn)) != -1) {
+				bos.write(bytesIn, 0, read);
+			}
+		}
+	}
 }
